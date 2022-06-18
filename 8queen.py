@@ -10,13 +10,14 @@ Created on Wed Jul 10 21:04:41 2019
 def backtrack(Q,r):
     if r==len(Q):
         print_chess_board(Q)
-    else :
+    else:
         for j in range(len(Q)):
             legal = True
             for i in range(r):
                 if((Q[i]==j)or(Q[i]==j+r-i)or(Q[i]==j-r+i)):
-                    legal = False               
-            if legal :
+                    legal = False
+                    break          
+            if legal:
                 Q[r]=j
                 backtrack(Q,r+1)
 
